@@ -16,7 +16,7 @@ const Color kHintTextColor = Color(0xFFA4A4A4);
 const Color kDividerColor = Color(0xFFBDBDBD);
 const Color kChipDeactiveColor = Color(0xFFDFDFDF);
 
-const Color kGreenColor = Color(0xFF008265);
+const Color kGreenColor = Color(0xFF218683);
 const Color kGreenColorTransparent = Color(0x10008265);
 const Color kMainBgColor = Color(0xFFF3F3F3);
 const Color kStopColor = Color(0xFFe4464b);
@@ -25,6 +25,8 @@ const int kFragmentHome = 3;
 const int kFragmentCategory = 2;
 const int kFragmentOrders = 1;
 const int kFragmentProfile = 0;
+
+const String kLoremIpsum = 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد ';
 
 const TextStyle kTitleTextStyle = TextStyle(
   color: kPrimaryTextColor,

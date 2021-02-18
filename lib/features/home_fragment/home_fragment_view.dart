@@ -8,6 +8,9 @@ import 'package:decooj_buyers/widgets/search_bar_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_icons/flutter_icons.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:video_player/video_player.dart';
 
 class HomeFragmentView extends StatefulWidget {
   @override
@@ -165,21 +168,20 @@ class _HomeFragmentViewState extends State<HomeFragmentView> {
                           height: 15,
                         ),
                         Container(
-
                           child: CarouselSlider.builder(
                             itemCount: 4,
                             itemBuilder: (BuildContext context, int itemIndex) {
                               return ProductsSliderWidget(
                                 model: ProductModel(
-                                  image: AssetImage('images/mobl_2.png'),
-                                  name: 'مبل یک نفره جدید',
-                                  price: '۲،۳۴۲،۲۳۱',
-                                  priceBefore: '۲،۵۴۲،۲۱۳'
-                                ),
+                                    image: AssetImage('images/mobl_2.png'),
+                                    name: 'مبل یک نفره جدید',
+                                    price: '۲،۳۴۲،۲۳۱',
+                                    priceBefore: '۲،۵۴۲،۲۱۳'),
                               );
                             },
                             options: CarouselOptions(
-                              height: MediaQuery.of(context).size.height * 0.50,
+                                height:
+                                    MediaQuery.of(context).size.height * 0.50,
                                 viewportFraction: 0.6,
                                 autoPlay: false,
                                 onPageChanged: (index, reason) {
@@ -190,7 +192,240 @@ class _HomeFragmentViewState extends State<HomeFragmentView> {
                       ],
                     ),
                   ),
-                ) // Slider 2
+                ), // Slider 2
+                SizedBox(
+                  height: 10,
+                ),
+                Container(
+                  width: MediaQuery.of(context).size.width * 0.8,
+                  padding: EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: Colors.white),
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Text(
+                            'درباره دکوژ',
+                            style:
+                                kTitleTextStyle.copyWith(color: Colors.black),
+                          ),
+                          SizedBox(
+                            width: 15,
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle, color: kGreenColor),
+                            width: 20,
+                            height: 20,
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle, color: kGreenColor),
+                            width: 20,
+                            height: 20,
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle, color: kGreenColor),
+                            width: 20,
+                            height: 20,
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 10),
+                      Text(
+                        kLoremIpsum,
+                        style: kMessageTextStyle.copyWith(color: Colors.black),
+                        textAlign: TextAlign.end,
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          FlatButton(
+                            onPressed: () {},
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10)),
+                            color: kAccentColor,
+                            child: Text(
+                              'پنل فروشندگان',
+                              style:
+                                  kTitleTextStyle.copyWith(color: Colors.white),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 15,
+                          ),
+                          FlatButton(
+                            onPressed: () {},
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10)),
+                            color: kSecondaryColor,
+                            child: Text(
+                              'پنل فروشندگان',
+                              style:
+                                  kTitleTextStyle.copyWith(color: Colors.black),
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        'دکوژ در شبکه اجتماعی',
+                        style:
+                            kTitleTextStyle.copyWith(color: kAccentTextColor),
+                        textAlign: TextAlign.center,
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: kAccentTextColor,
+                            ),
+                            child: Icon(
+                              FontAwesome.twitter,
+                              color: Colors.white,
+                            ),
+                            padding: EdgeInsets.all(8),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: kAccentTextColor,
+                            ),
+                            child: Icon(
+                              FontAwesome.instagram,
+                              color: Colors.white,
+                            ),
+                            padding: EdgeInsets.all(8),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: kAccentTextColor,
+                            ),
+                            child: Icon(
+                              FontAwesome.facebook,
+                              color: Colors.white,
+                            ),
+                            padding: EdgeInsets.all(8),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: kAccentTextColor,
+                            ),
+                            child: Icon(
+                              FontAwesome.linkedin,
+                              color: Colors.white,
+                            ),
+                            padding: EdgeInsets.all(8),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Container(
+                        padding: EdgeInsets.all(10),
+                        child: Stack(
+                          alignment: Alignment.center,
+                          children: [
+                            Image(
+                              image: AssetImage('images/video_bg.png'),
+                            ),
+                            Center(
+                              child: GestureDetector(
+                                onTap: () {
+                                  viewModel.launchVideoUrl();
+                                },
+                                child: Container(
+                                  padding: EdgeInsets.all(10),
+                                  decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: kSecondaryColor),
+                                  child: Icon(
+                                    Icons.play_arrow_outlined,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Container(
+                  padding: EdgeInsets.all(10),
+                  margin: EdgeInsets.only(right: 10),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.white),
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          FlatButton(
+                            onPressed: () {},
+                            child: Text(
+                              'مطالعه بیشتر',
+                              textAlign: TextAlign.center,
+                              style: kTitleTextStyle.copyWith(
+                                  color: Colors.white),
+                            ),
+                            color: kPrimaryColor,
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10)),
+                          ),
+                          Text(
+                            'تازه ترین های مجله',
+                            style: kTitleTextStyle.copyWith(
+                                color: kPrimaryColor),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Container(
+                        width: MediaQuery.of(context).size.width * 0.9,
+                        height: MediaQuery.of(context).size.height * 0.6,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.white),
+                        child: viewModel.postListView,
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
@@ -208,7 +443,6 @@ class ProductsSliderWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-
       margin: EdgeInsets.all(10),
       padding: EdgeInsets.all(8),
       decoration: BoxDecoration(
@@ -217,7 +451,10 @@ class ProductsSliderWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Container(
-            decoration: BoxDecoration(boxShadow: [kBoxShadow] ,color: Colors.white, borderRadius: BorderRadius.circular(16)),
+            decoration: BoxDecoration(
+                boxShadow: [kBoxShadow],
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(16)),
             child: Image(image: model.image),
           ),
           SizedBox(
@@ -241,7 +478,9 @@ class ProductsSliderWidget extends StatelessWidget {
           Text(
             model.priceBefore + ' تومان ',
             maxLines: 2,
-            style: kTitleTextStyle.copyWith(color: kAccentColor,),
+            style: kTitleTextStyle.copyWith(
+              color: kAccentColor,
+            ),
             textAlign: TextAlign.start,
           ),
           SizedBox(
@@ -311,4 +550,88 @@ class SliderModel {
   final String message;
 
   SliderModel(this.image, this.label, this.link, this.message);
+}
+
+class WordpressCardWidget extends StatelessWidget {
+  final int id;
+  final String title;
+  final String body;
+  final String image;
+  final Function(int id) onReadMoreClick;
+  final String link;
+
+  const WordpressCardWidget(
+      {Key key,
+      this.id,
+      this.title,
+      this.body,
+      this.image,
+      this.link,
+      this.onReadMoreClick})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: MediaQuery.of(context).size.width * 0.6,
+      height: MediaQuery.of(context).size.height * 0.5,
+      margin: EdgeInsets.all(15),
+      color: Colors.transparent,
+      child: Column(
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              color: Colors.white,
+
+            ),
+            child: GestureDetector(
+              onTap: () async{
+                if (await canLaunch(link)) {
+                  await launch(link);
+                } else {
+                  throw 'Could not launch ${link}';
+                }
+              },
+              child: Image(
+                fit: BoxFit.fill,
+                width: MediaQuery.of(context).size.width * 0.6,
+                height: MediaQuery.of(context).size.height * 0.3,
+                image: image != null
+                    ? NetworkImage(image)
+                    : AssetImage('images/video_bg.png'),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Text(
+                title,
+                style: kTitleTextStyle.copyWith(color: kPrimaryColor),
+              ),
+              SizedBox(width: 20),
+              Container(
+                width: 30,
+                height: 5,
+                color: kPrimaryColor,
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Text(
+            body,
+            textAlign: TextAlign.end,
+            maxLines: 5,
+            style: kMessageTextStyle.copyWith(color: kPrimaryColor),
+          ),
+        ],
+      ),
+    );
+  }
 }

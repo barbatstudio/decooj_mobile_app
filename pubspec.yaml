@@ -53,6 +53,9 @@ dependencies:
   custom_bottom_navigation_bar: ^0.0.1
   flutter_typeahead: ^2.0.0
   carousel_slider: ^2.3.1
+  flutter_icons: ^1.1.0
+  video_player: ^1.0.1
+  flutter_wordpress: ^0.2.1
 
 dev_dependencies:
   test: ^1.15.7
