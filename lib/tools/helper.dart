@@ -126,6 +126,18 @@ class Helper {
     )..show(context);
   }
 
+  static List<String> getSudgestions(String query) {
+    return [
+      'پیشنهاد ۱',
+      'پیشنهاد ۶',
+      'پیشنهاد ۷',
+      'پیشنهاد ۲',
+      'پیشنهاد ۳',
+      'پیشنهاد ۴',
+      'پیشنهاد ۵',
+    ];
+  }
+
 
   static void saveToken(String token) async {
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();

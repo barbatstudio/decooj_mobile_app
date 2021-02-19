@@ -1,3 +1,4 @@
+import 'package:decooj_buyers/features/category_fragment/subcategory/subcategory_view.dart';
 import 'package:decooj_buyers/features/home_fragment/home_fragment_viewmodel.dart';
 import 'package:decooj_buyers/generics/view_model_provider.dart';
 import 'package:decooj_buyers/model/category_model.dart';
@@ -57,6 +58,7 @@ class _CategoryFragmentViewState extends State<CategoryFragmentView> {
                         return CategoryBtnWidget(
                           onSelectCategory: (model) {
                             print("selected Category: ${model.name}");
+                            Navigator.push(context, MaterialPageRoute(builder: (_)=>SubCategoryView(categoryId: 1,)));
                           },
                           model: CategoryModel(id: i, name: 'دسته بندی ${i + 1}',image: AssetImage('images/category_pic_1.png')),
                         );
