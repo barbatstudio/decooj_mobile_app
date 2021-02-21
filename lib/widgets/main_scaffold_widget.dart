@@ -31,13 +31,13 @@ class MainScaffoldWidget extends StatelessWidget {
           key: scaffoldKey,
           body: body,
           bottomNavigationBar: bottomNavigationBar,
-          backgroundColor: bgColor == null ? Colors.white : bgColor,
+          backgroundColor: bgColor == null ? kMainBgColor : bgColor,
           floatingActionButton: flaotingActionBtn,
           appBar: AppBar(
           shadowColor: Colors.transparent,
             automaticallyImplyLeading: true,
             centerTitle: true,
-            backgroundColor: Colors.white,
+            backgroundColor: bgColor == null ? kMainBgColor : bgColor,
             leading: onBackClick != null
                 ? FlatButton(
                     onPressed: onBackClick,
