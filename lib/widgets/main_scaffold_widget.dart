@@ -35,9 +35,6 @@ class MainScaffoldWidget extends StatelessWidget {
           floatingActionButton: flaotingActionBtn,
           appBar: AppBar(
           shadowColor: Colors.transparent,
-          //   title: Image(
-          //   image: AssetImage('images/logo_white_small.png'),
-          // ),
             automaticallyImplyLeading: true,
             centerTitle: true,
             backgroundColor: Colors.white,
@@ -52,7 +49,7 @@ class MainScaffoldWidget extends StatelessWidget {
             actions: [
 
               Container(
-                margin: EdgeInsets.only(right: 15,top: 5),
+                margin: EdgeInsets.only(right: 15,top: 3),
                 alignment: Alignment.centerRight,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
@@ -62,7 +59,7 @@ class MainScaffoldWidget extends StatelessWidget {
                         image: AssetImage('images/decooj_farsi.png'),
                       ),
                     ),
-                    SizedBox(height: 5,),
+                    SizedBox(height: 1,),
                     Text(
                       'نگاهی نو به صنعت مبلمان',
                       textAlign: TextAlign.end,

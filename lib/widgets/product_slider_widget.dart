@@ -10,6 +10,7 @@ class ProductsSliderWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: MediaQuery.of(context).size.height * 0.5,
       margin: EdgeInsets.all(10),
       padding: EdgeInsets.all(8),
       decoration: BoxDecoration(
@@ -29,6 +30,7 @@ class ProductsSliderWidget extends StatelessWidget {
           ),
           Text(
             model.name,
+            textAlign: TextAlign.end,
             style: kTitleTextStyle.copyWith(color: Colors.black),
           ),
           SizedBox(
@@ -36,6 +38,7 @@ class ProductsSliderWidget extends StatelessWidget {
           ),
           Text(
             model.priceBefore,
+            textAlign: TextAlign.end,
             style: kTitleTextStyle.copyWith(
                 color: kHintTextColor, decoration: TextDecoration.lineThrough),
           ),
@@ -45,10 +48,11 @@ class ProductsSliderWidget extends StatelessWidget {
           Text(
             model.priceBefore + ' تومان ',
             maxLines: 2,
+
             style: kTitleTextStyle.copyWith(
               color: kAccentColor,
             ),
-            textAlign: TextAlign.start,
+            textAlign: TextAlign.end,
           ),
           SizedBox(
             height: 8,

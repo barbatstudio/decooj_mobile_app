@@ -52,7 +52,7 @@ class SubCategoryView extends StatelessWidget {
                     height: 10,
                   ),
                   Container(
-                    height: MediaQuery.of(context).size.height * 0.09,
+                    height: MediaQuery.of(context).size.height * 0.1,
                       width: MediaQuery.of(context).size.width,
                       child: viewModel.subCategoriesListView),
                   SizedBox(
