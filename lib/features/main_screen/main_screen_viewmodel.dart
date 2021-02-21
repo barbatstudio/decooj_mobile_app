@@ -1,6 +1,7 @@
 import 'package:decooj_buyers/features/cart_fragment/cart_view.dart';
 import 'package:decooj_buyers/features/category_fragment/category_fragment_view.dart';
 import 'package:decooj_buyers/features/home_fragment/home_fragment_view.dart';
+import 'package:decooj_buyers/features/login_flow/get_phone/get_phone_view.dart';
 import 'package:decooj_buyers/generics/base_view_model.dart';
 import 'package:decooj_buyers/tools/constants.dart';
 import 'package:decooj_buyers/widgets/loading_widget.dart';
@@ -37,6 +38,7 @@ class MainScreenViewModel extends BaseViewModel{
         break;
 
       case kFragmentProfile:
+        // selectedFragment = GetPhoneView();
         break;
     }
 

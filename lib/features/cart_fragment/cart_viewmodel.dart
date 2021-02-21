@@ -1,3 +1,4 @@
+import 'package:decooj_buyers/features/login_flow/get_phone/get_phone_view.dart';
 import 'package:decooj_buyers/generics/base_view_model.dart';
 import 'package:decooj_buyers/tools/constants.dart';
 import 'package:decooj_buyers/widgets/loading_widget.dart';
@@ -26,7 +27,9 @@ class CartViewModel extends BaseViewModel{
               isLogedIn
                   ? Container()
                   : FlatButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context,MaterialPageRoute(builder: (_)=> GetPhoneView()));
+                },
                 child: Text(
                   'ورود/ثبت نام',
                   style: kTitleTextStyle.copyWith(
