@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'دکوژ',
       theme: ThemeData(
         fontFamily: 'Averta',
-        primarySwatch: Colors.amber,
+        primarySwatch: Colors.blueGrey,
       ),
       routes: {
         // '/': (context) => NoteListView(),

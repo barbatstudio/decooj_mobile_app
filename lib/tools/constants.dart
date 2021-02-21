@@ -90,3 +90,6 @@ const int FIELD_TYPE_LIST_CHECK_BOX = 6;
 
 const int STEP_GET_OPTIONS_PARAMETERS = 1;
 const int STEP_GET_PARAMETERS_WEIGHT = 2;
+
+const int OPT_TYPE_LOGIN = 1;
+const int OPT_TYPE_SIGN_UP = 2;

@@ -1,3 +1,4 @@
+import 'package:decooj_buyers/features/login_flow/get_password/get_password_view/get_password_view.dart';
 import 'package:decooj_buyers/features/login_flow/get_phone/get_phone_viewmodel.dart';
 import 'package:decooj_buyers/generics/view_model_provider.dart';
 import 'package:decooj_buyers/tools/constants.dart';
@@ -65,7 +66,16 @@ class GetPhoneView extends StatelessWidget {
                     ),
                     FlatButton(
                       padding: EdgeInsets.all(10),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => GetPasswordView(
+                              phoneNumber: viewModel.phoneNumber,
+                            ),
+                          ),
+                        );
+                      },
                       color: kPrimaryColor,
                       child: Text(
                         'ورود/ثبت نام',
