@@ -1,3 +1,4 @@
+import 'package:decooj_buyers/features/cart_fragment/cart_view.dart';
 import 'package:decooj_buyers/features/category_fragment/category_fragment_view.dart';
 import 'package:decooj_buyers/features/home_fragment/home_fragment_view.dart';
 import 'package:decooj_buyers/generics/base_view_model.dart';
@@ -32,6 +33,7 @@ class MainScreenViewModel extends BaseViewModel{
         break;
 
       case kFragmentOrders:
+        selectedFragment  =CartView();
         break;
 
       case kFragmentProfile:
