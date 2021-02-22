@@ -52,7 +52,7 @@ class GetPhoneView extends StatelessWidget {
                             dialCode: '+98', isoCode: 'IR', phoneNumber: ''),
                         searchBoxDecoration: InputDecoration(
                           hintText: 'لطفا کشور مورد نظر خود را وارد کنید',
-                          hintTextDirection: TextDirection.rtl,
+                          // hintTextDirection: TextDirection.rtl,
                           border: InputBorder.none,
                         ),
                         inputDecoration: InputDecoration(

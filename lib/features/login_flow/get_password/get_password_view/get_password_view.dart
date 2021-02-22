@@ -1,3 +1,4 @@
+import 'package:decooj_buyers/features/login_flow/get_opt_code/get_opt_code_view.dart';
 import 'package:decooj_buyers/features/login_flow/get_password/get_password_view/get_password_viewmodel.dart';
 import 'package:decooj_buyers/generics/view_model_provider.dart';
 import 'package:decooj_buyers/tools/constants.dart';
@@ -41,11 +42,11 @@ class GetPasswordView extends StatelessWidget {
                         boxShadow: [kBoxShadow]),
                     child: TextField(
                       decoration: InputDecoration(
-                          border: InputBorder.none,
-                          hintText: 'رمز عبور',
-
-                          contentPadding: EdgeInsets.all(10),
-                          hintTextDirection: TextDirection.rtl),
+                        border: InputBorder.none,
+                        hintText: 'رمز عبور',
+                        contentPadding: EdgeInsets.all(10),
+                        // hintTextDirection: TextDirection.rtl,
+                      ),
                       obscureText: true,
                       textAlign: TextAlign.end,
                       onChanged: (data) {
@@ -59,7 +60,15 @@ class GetPasswordView extends StatelessWidget {
                   Container(
                       alignment: Alignment.centerRight,
                       child: TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (_) => GetOptCodeView(
+                                          optType: OPT_TYPE_LOGIN,
+                                      phoneNumber: phoneNumber,
+                                        )));
+                          },
                           child: Text(
                             'ورود با کد تایید',
                             style:

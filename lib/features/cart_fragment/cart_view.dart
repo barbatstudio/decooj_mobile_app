@@ -17,6 +17,7 @@ class CartView extends StatelessWidget {
               height: MediaQuery.of(context).size.height * 0.7,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
+                boxShadow: [kBoxShadow]
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -39,6 +40,8 @@ class CartView extends StatelessWidget {
                     child: Container(
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
+                        borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10),bottomRight: Radius.circular(10)),
+                        color: Colors.white,
                         image: DecorationImage(
                             image: AssetImage('images/main_slider_bg.png'),
                             fit: BoxFit.cover),

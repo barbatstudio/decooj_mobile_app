@@ -57,6 +57,7 @@ dependencies:
   video_player: ^1.0.1
   flutter_wordpress: ^0.2.1
   intl_phone_number_input: ^0.6.0
+  flutter_countdown_timer: ^3.0.1
 
 dev_dependencies:
   test: ^1.15.7
