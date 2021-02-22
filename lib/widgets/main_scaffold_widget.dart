@@ -11,6 +11,7 @@ class MainScaffoldWidget extends StatelessWidget {
   final Color bgColor;
   final Function onBackClick;
   final Widget bottomNavigationBar;
+  final bool isSetting;
 
   const MainScaffoldWidget(
       {Key key,
@@ -18,7 +19,8 @@ class MainScaffoldWidget extends StatelessWidget {
       this.scaffoldKey,
       this.flaotingActionBtn,
       this.bgColor,
-        this.bottomNavigationBar,
+      this.bottomNavigationBar,
+      this.isSetting,
       this.onBackClick})
       : super(key: key);
 
@@ -26,7 +28,7 @@ class MainScaffoldWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Directionality(
-        textDirection: ui.TextDirection.ltr ,
+        textDirection: ui.TextDirection.ltr,
         child: Scaffold(
           key: scaffoldKey,
           body: body,
@@ -34,22 +36,25 @@ class MainScaffoldWidget extends StatelessWidget {
           backgroundColor: bgColor == null ? kMainBgColor : bgColor,
           floatingActionButton: flaotingActionBtn,
           appBar: AppBar(
-          shadowColor: Colors.transparent,
+            shadowColor: Colors.transparent,
             automaticallyImplyLeading: true,
             centerTitle: true,
             backgroundColor: bgColor == null ? kMainBgColor : bgColor,
-            leading: onBackClick != null
+            leading: onBackClick != null && (isSetting == null || !isSetting)
                 ? FlatButton(
                     onPressed: onBackClick,
                     child: Icon(
                       Icons.arrow_back,
                       color: kAccentColor,
                     ))
+                : isSetting && onBackClick != null ?
+            FlatButton(
+                onPressed: onBackClick,
+                child: Image(image: AssetImage('images/ic_settings.png'),))
                 : Container(),
             actions: [
-
               Container(
-                margin: EdgeInsets.only(right: 15,top: 3),
+                margin: EdgeInsets.only(right: 15, top: 3),
                 alignment: Alignment.centerRight,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
@@ -59,7 +64,9 @@ class MainScaffoldWidget extends StatelessWidget {
                         image: AssetImage('images/decooj_farsi.png'),
                       ),
                     ),
-                    SizedBox(height: 1,),
+                    SizedBox(
+                      height: 1,
+                    ),
                     Text(
                       'نگاهی نو به صنعت مبلمان',
                       textAlign: TextAlign.end,
@@ -71,8 +78,6 @@ class MainScaffoldWidget extends StatelessWidget {
               Image(image: AssetImage('images/decooj_logo.png'))
             ],
           ),
-
-
         ),
       ),
     );

@@ -25,7 +25,8 @@ class _MainScreenViewState extends State<MainScreenView> {
       builder: (viewModel) {
         return SafeArea(
           child: MainScaffoldWidget(
-
+              isSetting: viewModel.isSetting,
+            onBackClick: viewModel.onBackClick,
             bottomNavigationBar: Container(
               decoration: BoxDecoration(boxShadow: [kBottomNavShadow]),
               child: CustomBottomNavigationBar(
