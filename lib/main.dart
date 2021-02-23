@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
 
       title: 'دکوژ',
       theme: ThemeData(
-        fontFamily: 'Averta',
+        fontFamily: 'Iran_Yekan',
         primarySwatch: Colors.blueGrey,
       ),
       routes: {

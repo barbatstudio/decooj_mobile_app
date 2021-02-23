@@ -94,6 +94,12 @@ flutter:
     - family:  MyCustomIcons
       fonts:
        - asset: fonts/MyCustomIcons.ttf
+
+    - family:  Iran_Yekan
+      fonts:
+        - asset: fonts/iran_yekan_bold.ttf
+        - asset: fonts/iran_yekan_light.ttf
+        - asset: fonts/iran_yekan_regular.ttf
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg

@@ -30,35 +30,59 @@ class GetPhoneView extends StatelessWidget {
                     SizedBox(
                       height: 10,
                     ),
+                    // Container(
+                    //   width: MediaQuery.of(context).size.width * 0.8,
+                    //   decoration: BoxDecoration(
+                    //       color: Colors.white,
+                    //       borderRadius: BorderRadius.circular(10),
+                    //       boxShadow: [kBoxShadow]),
+                    //   child: InternationalPhoneNumberInput(
+                    //     onInputChanged: (phoneNumber) {
+                    //       viewModel.updatePhone(phoneNumber.phoneNumber);
+                    //       print(
+                    //           'phoneNumber: ${phoneNumber.phoneNumber}, dialCode: ${phoneNumber.dialCode}, isoCode: ${phoneNumber.isoCode}');
+                    //     },
+                    //     cursorColor: kPrimaryColor,
+                    //     selectorConfig: SelectorConfig(
+                    //         showFlags: true,
+                    //         selectorType: PhoneInputSelectorType.BOTTOM_SHEET),
+                    //     hintText: " شماره موبایل",
+                    //     maxLength: 12,
+                    //     initialValue: PhoneNumber(
+                    //         dialCode: '+98', isoCode: 'IR', phoneNumber: ''),
+                    //     searchBoxDecoration: InputDecoration(
+                    //       hintText: 'لطفا کشور مورد نظر خود را وارد کنید',
+                    //       // hintTextDirection: TextDirection.rtl,
+                    //       border: InputBorder.none,
+                    //     ),
+                    //     inputDecoration: InputDecoration(
+                    //         hoverColor: kPrimaryColor,
+                    //         hintText: " شماره موبایل",
+                    //         border: InputBorder.none),
+                    //   ),
+                    // ),
+
                     Container(
-                      width: MediaQuery.of(context).size.width * 0.8,
+                      margin: EdgeInsets.only(left: 15, right: 15, bottom: 10),
                       decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(10),
                           boxShadow: [kBoxShadow]),
-                      child: InternationalPhoneNumberInput(
-                        onInputChanged: (phoneNumber) {
-                          viewModel.updatePhone(phoneNumber.phoneNumber);
-                          print(
-                              'phoneNumber: ${phoneNumber.phoneNumber}, dialCode: ${phoneNumber.dialCode}, isoCode: ${phoneNumber.isoCode}');
-                        },
-                        cursorColor: kPrimaryColor,
-                        selectorConfig: SelectorConfig(
-                            showFlags: true,
-                            selectorType: PhoneInputSelectorType.BOTTOM_SHEET),
-                        hintText: " شماره موبایل",
-                        maxLength: 12,
-                        initialValue: PhoneNumber(
-                            dialCode: '+98', isoCode: 'IR', phoneNumber: ''),
-                        searchBoxDecoration: InputDecoration(
-                          hintText: 'لطفا کشور مورد نظر خود را وارد کنید',
-                          // hintTextDirection: TextDirection.rtl,
+                      child: TextField(
+                        maxLength: 11,
+                        keyboardType: TextInputType.phone,
+                        buildCounter: (BuildContext context, { int currentLength, int maxLength, bool isFocused }) => null,
+                        decoration: InputDecoration(
+
                           border: InputBorder.none,
+                          hintText: '09xx-xxxxxxx',
+                          contentPadding: EdgeInsets.all(10),
+                          // hintTextDirection: TextDirection.rtl,
                         ),
-                        inputDecoration: InputDecoration(
-                            hoverColor: kPrimaryColor,
-                            hintText: " شماره موبایل",
-                            border: InputBorder.none),
+                        textAlign: TextAlign.center,
+                        onChanged: (data) {
+                          viewModel.updatePhone(data);
+                        },
                       ),
                     ),
                     SizedBox(

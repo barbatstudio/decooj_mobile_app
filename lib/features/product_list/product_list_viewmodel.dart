@@ -19,7 +19,7 @@ class ProductListViewmodel extends BaseViewModel{
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         mainAxisSpacing: 2,
           childAspectRatio: MediaQuery.of(context).size.width /
-              (MediaQuery.of(context).size.height ),
+              (MediaQuery.of(context).size.height ) *1.3,
           crossAxisCount: 2),
       itemBuilder: (context, i) {
         return ProductsSliderWidget(

@@ -83,7 +83,7 @@ class SubCategoryViewModel extends BaseViewModel {
         );
       },
       options: CarouselOptions(
-          height: MediaQuery.of(context).size.height * 0.60,
+          height: 350,
           viewportFraction: 0.6,
           autoPlay: false,
           onPageChanged: (index, reason) {}),
@@ -101,7 +101,7 @@ class SubCategoryViewModel extends BaseViewModel {
         );
       },
       options: CarouselOptions(
-          height: MediaQuery.of(context).size.height * 0.60,
+          height: 350,
           viewportFraction: 0.6,
           autoPlay: false,
           onPageChanged: (index, reason) {}),

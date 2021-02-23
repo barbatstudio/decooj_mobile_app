@@ -48,7 +48,8 @@ class _HomeFragmentViewState extends State<HomeFragmentView> {
                 Container(
                   padding: EdgeInsets.all(15),
                   width: MediaQuery.of(context).size.width * 0.90,
-                  height: MediaQuery.of(context).size.height * 0.40,
+                  // height: MediaQuery.of(context).size.height * 0.40,
+                  height: 250,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(16),
                     color: Colors.white,
@@ -182,7 +183,7 @@ class _HomeFragmentViewState extends State<HomeFragmentView> {
                             },
                             options: CarouselOptions(
                                 height:
-                                    MediaQuery.of(context).size.height * 0.50,
+                                    350,
                                 viewportFraction: 0.6,
                                 autoPlay: false,
                                 onPageChanged: (index, reason) {

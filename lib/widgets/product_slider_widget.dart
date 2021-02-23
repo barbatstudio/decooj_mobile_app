@@ -54,9 +54,7 @@ class ProductsSliderWidget extends StatelessWidget {
             ),
             textAlign: TextAlign.end,
           ),
-          SizedBox(
-            height: 8,
-          ),
+
         ],
       ),
     );
