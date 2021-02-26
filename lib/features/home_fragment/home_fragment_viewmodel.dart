@@ -3,14 +3,13 @@ import 'package:decooj_buyers/tools/constants.dart';
 import 'package:decooj_buyers/widgets/loading_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:video_player/video_player.dart';
 import 'package:flutter_wordpress/flutter_wordpress.dart' as wp;
 
 import 'home_fragment_view.dart';
 
 class HomeFragmentViewModel extends BaseViewModel {
   Widget postListView = LoadingWidget();
-  VideoPlayerController videoController;
+
   final BuildContext context;
   final TextEditingController textEditingController;
   Widget sliderIndicator = Container();

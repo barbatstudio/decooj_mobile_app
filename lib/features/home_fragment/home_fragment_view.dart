@@ -11,7 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:video_player/video_player.dart';
+
 
 class HomeFragmentView extends StatefulWidget {
   @override
@@ -28,6 +28,7 @@ class _HomeFragmentViewState extends State<HomeFragmentView> {
           context: context, textEditingController: _typeAheadController),
       builder: (viewModel) {
         return Container(
+          height: MediaQuery.of(context).size.height,
           child: SingleChildScrollView(
             child: Column(
               children: [
@@ -199,7 +200,7 @@ class _HomeFragmentViewState extends State<HomeFragmentView> {
                   height: 10,
                 ),
                 Container(
-                  width: MediaQuery.of(context).size.width * 0.8,
+                  width: MediaQuery.of(context).size.width * 0.9,
                   padding: EdgeInsets.all(10),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
@@ -383,9 +384,10 @@ class _HomeFragmentViewState extends State<HomeFragmentView> {
                 ),
                 Container(
                   padding: EdgeInsets.all(10),
-                  margin: EdgeInsets.only(right: 10),
+                  margin: EdgeInsets.only(right: 10,left: 10,bottom: 10),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
+                      boxShadow: [kBoxShadow],
                       color: Colors.white),
                   child: Column(
                     children: [

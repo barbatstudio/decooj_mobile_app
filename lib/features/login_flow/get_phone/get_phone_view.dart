@@ -5,7 +5,6 @@ import 'package:decooj_buyers/tools/constants.dart';
 import 'package:decooj_buyers/widgets/main_scaffold_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
 class GetPhoneView extends StatelessWidget {
   @override

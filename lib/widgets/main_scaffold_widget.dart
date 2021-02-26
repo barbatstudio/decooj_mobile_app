@@ -30,13 +30,14 @@ class MainScaffoldWidget extends StatelessWidget {
       child: Directionality(
         textDirection: ui.TextDirection.ltr,
         child: Scaffold(
+          extendBody: true,
           key: scaffoldKey,
           body: body,
           bottomNavigationBar: bottomNavigationBar,
           backgroundColor: bgColor == null ? kMainBgColor : bgColor,
           floatingActionButton: flaotingActionBtn,
           appBar: AppBar(
-            shadowColor: Colors.transparent,
+            // shadowColor: Colors.transparent,
             automaticallyImplyLeading: true,
             centerTitle: true,
             backgroundColor: bgColor == null ? kMainBgColor : bgColor,
@@ -54,7 +55,7 @@ class MainScaffoldWidget extends StatelessWidget {
                 : Container(),
             actions: [
               Container(
-                margin: EdgeInsets.only(right: 15, top: 3),
+                margin: EdgeInsets.only(right: 15, top: 6),
                 alignment: Alignment.centerRight,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
@@ -64,18 +65,20 @@ class MainScaffoldWidget extends StatelessWidget {
                         image: AssetImage('images/decooj_farsi.png'),
                       ),
                     ),
-                    SizedBox(
-                      height: 1,
-                    ),
+                    // SizedBox(
+                    //   height: 1,
+                    // ),
                     Text(
                       'نگاهی نو به صنعت مبلمان',
                       textAlign: TextAlign.end,
-                      style: kTitleTextStyle.copyWith(color: kAccentTextColor),
+                      style: kMessageTextStyle.copyWith(color: kAccentTextColor),
                     ),
                   ],
                 ),
               ),
-              Image(image: AssetImage('images/decooj_logo.png'))
+              Container(
+                margin: EdgeInsets.only(right: 10),
+                  child: Image(image: AssetImage('images/decooj_logo.png')))
             ],
           ),
         ),

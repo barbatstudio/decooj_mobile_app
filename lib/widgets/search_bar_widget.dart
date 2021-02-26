@@ -20,12 +20,15 @@ class SearchBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width * 0.8,
+      margin: EdgeInsets.only(left: 10,right: 10),
+      width: MediaQuery.of(context).size.width ,
+      height: 50,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
           color: Colors.white,
-          boxShadow: [kBoxShadow]),
-      padding: EdgeInsets.all(5),
+          border: Border.all(color: kHintTextColor),
+          ),
+      padding: EdgeInsets.only(left: 5,right: 5),
       child: Row(
         children: [
           Expanded(
@@ -72,7 +75,7 @@ class SearchBarWidget extends StatelessWidget {
               ),
             ),
           ),
-          VerticalDivider(width: 5,),
+          VerticalDivider(width: 10,color: kHintTextColor,thickness: 1.5,),
 
           Image(
             image: AssetImage('images/ic_magnifier.png'),

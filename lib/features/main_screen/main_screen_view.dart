@@ -25,10 +25,11 @@ class _MainScreenViewState extends State<MainScreenView> {
       builder: (viewModel) {
         return SafeArea(
           child: MainScaffoldWidget(
+
               isSetting: viewModel.isSetting,
             onBackClick: viewModel.onBackClick,
             bottomNavigationBar: Container(
-              decoration: BoxDecoration(boxShadow: [kBottomNavShadow]),
+              // decoration: BoxDecoration(boxShadow: [kBottomNavShadow]),
               child: CustomBottomNavigationBar(
                 backgroundColor: Colors.white,
                 selectedItemColor: Colors.white,
@@ -44,30 +45,31 @@ class _MainScreenViewState extends State<MainScreenView> {
                     icon: MyCustomIcons.ic_profile,
                     title: "پروفایل",
                     titleTextStyle:
-                        kTitleTextStyle.copyWith(color: kPrimaryColor),
+                        kTitleTextStyle.copyWith(color: kPrimaryColor,fontSize: 10 ),
                   ),
                   CustomBottomNavigationBarItem(
                     icon: Icons.shopping_cart_outlined,
                     title: "سبد خرید",
                     titleTextStyle:
-                        kTitleTextStyle.copyWith(color: kPrimaryColor),
+                        kTitleTextStyle.copyWith(color: kPrimaryColor,fontSize: 10),
                   ),
                   CustomBottomNavigationBarItem(
-                    icon: MyCustomIcons.ic_layout_right_menu,
+                    icon: MyCustomIcons.group_823,
                     title: "دسته بندی",
                     titleTextStyle:
-                        kTitleTextStyle.copyWith(color: kPrimaryColor),
+                        kTitleTextStyle.copyWith(color: kPrimaryColor,fontSize: 10),
                   ),
                   CustomBottomNavigationBarItem(
                     icon: MyCustomIcons.ic_real_estate_search_house,
                     title: "خانه",
                     titleTextStyle:
-                        kTitleTextStyle.copyWith(color: kPrimaryColor),
+                        kTitleTextStyle.copyWith(color: kPrimaryColor,fontSize: 10),
                   ),
                 ],
               ),
             ),
             body: Container(
+              height: MediaQuery.of(context).size.height,
               child: Column(
                 children: [
                   SizedBox(

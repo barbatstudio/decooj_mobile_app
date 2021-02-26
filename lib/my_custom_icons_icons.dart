@@ -23,6 +23,6 @@ class MyCustomIcons {
 
   static const IconData ic_profile = IconData(0xe800, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData ic_furniture_chair = IconData(0xe801, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData ic_layout_right_menu = IconData(0xe802, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData ic_real_estate_search_house = IconData(0xe803, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData group_823 = IconData(0xe808, fontFamily: _kFontFam, fontPackage: _kFontPkg);
 }
