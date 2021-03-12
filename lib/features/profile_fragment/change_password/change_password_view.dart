@@ -1,5 +1,3 @@
-import 'package:decooj_buyers/features/profile_fragment/address/address_list/adress_list_view.dart';
-import 'package:decooj_buyers/features/profile_fragment/change_password/change_password_view.dart';
 import 'package:decooj_buyers/features/profile_fragment/profile_info/profile_info_viewmodel.dart';
 import 'package:decooj_buyers/generics/view_model_provider.dart';
 import 'package:decooj_buyers/tools/constants.dart';
@@ -11,13 +9,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-class ProfileInfoView extends StatelessWidget {
+import 'change_password_viewmodel.dart';
+
+class ChangePasswordView extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
-    return ViewModelProvider<ProfileInfoViewModel>(
-        viewModel: ProfileInfoViewModel(context: context),
+    return ViewModelProvider<ChangePasswordViewModel>(
+        viewModel: ChangePasswordViewModel(context: context),
         builder: (viewModel) {
           return SafeArea(
             child: MainScaffoldWidget(
@@ -37,7 +37,7 @@ class ProfileInfoView extends StatelessWidget {
                               topLeft: Radius.circular(10)),
                           color: kAccentColor),
                       child: Text(
-                        'اطلاعات کاربری',
+                        'تغییر گذرواژه',
                         style: kTitleTextStyle.copyWith(color: Colors.white),
                         textAlign: TextAlign.end,
                       ),
@@ -61,10 +61,11 @@ class ProfileInfoView extends StatelessWidget {
                                 onChanged: (val) {
                                   print(val);
                                 },
+                                obscureText: true,
                                 textDirection: TextDirection.rtl,
                                 validator: (val) {
-                                  if (val.isEmpty || val.length < 3) {
-                                    return 'مقدار نام باید بیشتر از ۳ حرف باشد';
+                                  if (val.isEmpty || val.length < 8) {
+                                    return 'مقدار ۳ حرف باشد';
                                   }
                                   return null;
                                 },
@@ -76,7 +77,7 @@ class ProfileInfoView extends StatelessWidget {
                                         borderSide:
                                             BorderSide(color: kPrimaryColor))),
                               ),
-                              label: 'نام',
+                              label: 'گذرواژه فعلی',
                             ),
                             FormFieldWidget(
                               textField: TextFormField(
@@ -85,10 +86,11 @@ class ProfileInfoView extends StatelessWidget {
                                 onChanged: (val) {
                                   print(val);
                                 },
+                                obscureText: true,
                                 textDirection: TextDirection.rtl,
                                 validator: (val) {
-                                  if (val.isEmpty || val.length < 3) {
-                                    return 'مقدار نام خانوادگی باید بیشتر از ۳ حرف باشد';
+                                  if (val.isEmpty || val.length < 8) {
+                                    return 'مقدار ۸ حرف باشد';
                                   }
                                   return null;
                                 },
@@ -100,7 +102,7 @@ class ProfileInfoView extends StatelessWidget {
                                         borderSide:
                                             BorderSide(color: kPrimaryColor))),
                               ),
-                              label: 'نام خانوادگی',
+                              label: 'گذرواژه جدید',
                             ),
                             FormFieldWidget(
                               textField: TextFormField(
@@ -109,94 +111,27 @@ class ProfileInfoView extends StatelessWidget {
                                 onChanged: (val) {
                                   print(val);
                                 },
+                                obscureText: true,
                                 textDirection: TextDirection.rtl,
                                 validator: (val) {
-                                  if (val.isEmpty || val.length < 3) {
-                                    return 'مقدار وارد شده صحیح نمی باشد';
+                                  if (val.isEmpty || val.length < 8) {
+                                    return 'مقدار ۸ حرف باشد';
                                   }
                                   return null;
                                 },
                                 decoration: InputDecoration(
                                     contentPadding: EdgeInsets.only(right: 5),
                                     hintTextDirection: TextDirection.rtl,
-                                    hintText: '09xxxxxxxxx',
+
                                     fillColor: Colors.white,
                                     border: OutlineInputBorder(
                                         borderRadius: BorderRadius.circular(10),
                                         borderSide:
                                             BorderSide(color: kPrimaryColor))),
                               ),
-                              label: 'شماره تلفن همراه',
+                              label: 'تکرار گذرواژه جدید',
                             ),
-                            FormFieldWidget(
-                              textField: TextFormField(
-                                keyboardType: TextInputType.text,
-                                maxLines: 1,
-                                onChanged: (val) {
-                                  print(val);
-                                },
-                                textDirection: TextDirection.rtl,
-                                validator: (val) {
-                                  if (val.isEmpty || val.length < 3) {
-                                    return 'مقدار وارد شده صحیح نمی باشد';
-                                  }
-                                  return null;
-                                },
-                                decoration: InputDecoration(
-                                    contentPadding: EdgeInsets.only(right: 5),
-                                    fillColor: Colors.white,
-                                    border: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(10),
-                                        borderSide:
-                                            BorderSide(color: kPrimaryColor))),
-                              ),
-                              label: 'کد ملی',
-                            ),
-                            FormFieldWidget(
-                              textField: TextFormField(
-                                keyboardType: TextInputType.text,
-                                maxLines: 1,
-                                onChanged: (val) {
-                                  print(val);
-                                },
-                                textDirection: TextDirection.rtl,
-                                validator: (val) {
-                                  if (!Helper.validateEmail(val)) {
-                                    return 'مقدار وارد شده صحیح نمی باشد';
-                                  }
-                                  return null;
-                                },
-                                decoration: InputDecoration(
-                                    contentPadding: EdgeInsets.only(right: 5),
-                                    fillColor: Colors.white,
-                                    border: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(10),
-                                        borderSide:
-                                            BorderSide(color: kPrimaryColor))),
-                              ),
-                              label: 'پست الکترونیک',
-                            ),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            Align(
-                              child: TextButton(
-                                onPressed: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (_) => AddressListView()),
-                                  );
-                                },
-                                child: Text(
-                                  'تغییر گذرواژه',
-                                  style: kTitleTextStyle.copyWith(
-                                      color: kPrimaryColor),
-                                  textAlign: TextAlign.right,
-                                ),
-                              ),
-                              alignment: Alignment.centerRight,
-                            ),
+
                             SizedBox(
                               height: 10,
                             ),
@@ -218,20 +153,7 @@ class ProfileInfoView extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Container(
-                      margin: EdgeInsets.only(right: 20, left: 20, bottom: 25),
-                      child: FlatButton(
-                        onPressed: () {},
-                        color: kAccentColor,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10)),
-                        child: Text(
-                          'اضافه کردن اطلاعات حقوقی',
-                          style: kTitleTextStyle.copyWith(color: Colors.white),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                    ),
+
                   ],
                 ),
               ),

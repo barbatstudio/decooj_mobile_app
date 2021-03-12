@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:decooj_buyers/features/profile_fragment/address/new_address/adress_info_view.dart';
 import 'package:decooj_buyers/tools/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -39,14 +40,17 @@ class MapSampleState extends State<MapSample> {
     return SafeArea(
       child: new Scaffold(
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-        floatingActionButton: FloatingActionButton(
+        floatingActionButton: FlatButton(
           onPressed: () async {
 
             LatLngBounds bounds =  await googleMapController.getVisibleRegion();
             print(bounds);
 
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (_)=>AddressInfoView(bounds: bounds,)));
+
           },
-          backgroundColor: kAccentColor,
+          color: kPrimaryColor,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
           child: Text(
             'تایید',
             style: kTitleTextStyle.copyWith(color: Colors.white),

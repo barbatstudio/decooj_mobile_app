@@ -1,3 +1,4 @@
+import 'package:decooj_buyers/features/profile_fragment/address/address_list/adress_list_view.dart';
 import 'package:decooj_buyers/features/profile_fragment/profile_info/profile_info_view.dart';
 import 'package:decooj_buyers/features/profile_fragment/profile_viewmodel.dart';
 import 'package:decooj_buyers/generics/view_model_provider.dart';
@@ -52,6 +53,9 @@ class ProfileView extends StatelessWidget {
                 ProfileBtn(
                   icon: Image(image: AssetImage('images/ic_map_pin.png'),),
                   title: 'آدرس های من ',
+                  onBtnClick: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (_)=>AddressListView()));
+                  },
                 ),
               ],
             ),
@@ -80,11 +84,10 @@ class ProfileBtn extends StatelessWidget {
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.end,
-          crossAxisAlignment: CrossAxisAlignment.baseline,
           children: [
             SizedBox(width: 10,),
-            Text(title,style: kTitleTextStyle.copyWith(color: Colors.black),),
-            SizedBox(width: 15,),
+            Text(title,style: kTitleTextStyle.copyWith(color: Colors.black),textAlign: TextAlign.center,),
+            SizedBox(width: 10,),
             icon,
 
 
