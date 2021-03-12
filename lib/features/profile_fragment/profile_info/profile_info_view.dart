@@ -185,7 +185,7 @@ class ProfileInfoView extends StatelessWidget {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (_) => AddressListView()),
+                                        builder: (_) => ChangePasswordView()),
                                   );
                                 },
                                 child: Text(

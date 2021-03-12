@@ -7,6 +7,7 @@ const String kAppName = '';
 const Color kDarkPrimaryColor = Color(0xFFF57C00);
 const Color kLightPrimaryColor = Color(0xFFFFE0B2);
 const Color kPrimaryColor = Color(0xFF324467);
+const Color kPrimaryColorTrans = Color(0xa0324467);
 const Color kSecondaryColor = Color(0xFFFFDF80);
 const Color kAccentColor = Color(0xFF53B9B6);
 const Color kPrimaryTextColor = Color(0xFF6C61DE);
@@ -20,6 +21,8 @@ const Color kGreenColor = Color(0xFF218683);
 const Color kGreenColorTransparent = Color(0x10008265);
 const Color kMainBgColor = Color(0xFFF3F3F3);
 const Color kStopColor = Color(0xFFe4464b);
+const Color kBlueColor = Color(0xFF0080FF);
+const Color kOrangeColor = Color(0xFFFF8000);
 
 const int kFragmentHome = 3;
 const int kFragmentCategory = 2;
@@ -93,3 +96,14 @@ const int STEP_GET_PARAMETERS_WEIGHT = 2;
 
 const int OPT_TYPE_LOGIN = 1;
 const int OPT_TYPE_SIGN_UP = 2;
+
+const int ORDER_TYPE_NORMAL = 1;
+const int ORDER_TYPE_SPECIAL = 2;
+
+const int ORDER_STATE_ACTIVE = 1;
+const int ORDER_STATE_WAITING_FOR_PAYMENT = 2;
+const int ORDER_STATE_FINISHED = 3;
+const int ORDER_STATE_RETURNED = 4;
+const int ORDER_STATE_CANCELED = 5;
+const int ORDER_STATE_WAITING_FOR_BILL = 6;
+const int ORDER_STATE_WAITING_FOR_VIEW = 7;

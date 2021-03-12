@@ -1,4 +1,5 @@
 import 'package:decooj_buyers/features/profile_fragment/address/address_list/adress_list_view.dart';
+import 'package:decooj_buyers/features/profile_fragment/orders/orders_view.dart';
 import 'package:decooj_buyers/features/profile_fragment/profile_info/profile_info_view.dart';
 import 'package:decooj_buyers/features/profile_fragment/profile_viewmodel.dart';
 import 'package:decooj_buyers/generics/view_model_provider.dart';
@@ -49,6 +50,9 @@ class ProfileView extends StatelessWidget {
                 ProfileBtn(
                   icon: Image(image: AssetImage('images/ic_furniture.png'),),
                   title: 'سفارشات من',
+                  onBtnClick: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (_)=>OrdersView()));
+                  },
                 ),
                 ProfileBtn(
                   icon: Image(image: AssetImage('images/ic_map_pin.png'),),
@@ -68,8 +72,9 @@ class ProfileBtn extends StatelessWidget {
   final String title;
   final Image icon;
   final Function onBtnClick;
+  final bool isTransparent;
 
-  ProfileBtn({Key key, this.title, this.icon, this.onBtnClick}) : super(key: key);
+  ProfileBtn({Key key, this.title, this.icon, this.onBtnClick,this.isTransparent = false}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -79,8 +84,8 @@ class ProfileBtn extends StatelessWidget {
         margin: EdgeInsets.all(10),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          color: Colors.white,
-          boxShadow: [kBoxShadow]
+          color: isTransparent ? Colors.transparent : Colors.white,
+          boxShadow:isTransparent ? null: [kBoxShadow]
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.end,

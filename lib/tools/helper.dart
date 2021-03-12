@@ -105,6 +105,53 @@ class Helper {
     return true;
   }
 
+  static String getOrderState (int state)
+  {
+    switch(state){
+      case ORDER_STATE_ACTIVE:
+        return 'در حال انجام';
+      case ORDER_STATE_CANCELED:
+        return 'لغو شده';
+
+      case ORDER_STATE_RETURNED:
+        return 'مرجوعی';
+
+      case ORDER_STATE_WAITING_FOR_PAYMENT:
+        return 'در انتظار پرداخت';
+      case ORDER_STATE_FINISHED:
+        return 'تحویل شده';
+
+      case ORDER_STATE_WAITING_FOR_BILL:
+        return 'در انتظار صدور فاکتور';
+
+      case ORDER_STATE_WAITING_FOR_VIEW:
+        return 'در انتظار بازدید';
+    }
+  }
+
+  static Color getOrderStatesColor (int state)
+  {
+    switch(state){
+      case ORDER_STATE_ACTIVE:
+        return kAccentColor;
+      case ORDER_STATE_CANCELED:
+        return kStopColor;
+
+      case ORDER_STATE_RETURNED:
+        return kAccentTextColor;
+
+      case ORDER_STATE_WAITING_FOR_PAYMENT:
+        return kBlueColor;
+      case ORDER_STATE_FINISHED:
+        return kGreenColor;
+
+      case ORDER_STATE_WAITING_FOR_BILL:
+        return kHintTextColor;
+
+      case ORDER_STATE_WAITING_FOR_VIEW:
+        return kOrangeColor;
+    }
+  }
 
   static bool validateEmail(String value) {
     Pattern pattern =
