@@ -119,6 +119,7 @@ class _ProductDetailSliderWidgetState extends State<ProductDetailSliderWidget> {
                 child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     itemCount: widget.imagesUrl.length,
+                    reverse: true,
                     itemBuilder: (context, i) {
                       return Container(
                         width: 70,
