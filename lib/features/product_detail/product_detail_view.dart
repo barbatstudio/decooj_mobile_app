@@ -72,6 +72,7 @@ class ProductDetailView extends StatelessWidget {
                               textAlign: TextAlign.right,
                             ),
                             DropDownWidget(
+                              width: double.infinity,
                               hint: '',
                               items: viewModel.features,
                               currentVal: viewModel.selected,

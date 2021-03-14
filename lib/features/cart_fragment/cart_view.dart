@@ -1,4 +1,5 @@
 import 'package:decooj_buyers/features/cart_fragment/cart_viewmodel.dart';
+import 'package:decooj_buyers/features/final_confirmation/final_confirmation_view.dart';
 import 'package:decooj_buyers/generics/view_model_provider.dart';
 import 'package:decooj_buyers/tools/constants.dart';
 import 'package:decooj_buyers/widgets/main_scaffold_widget.dart';
@@ -134,7 +135,15 @@ class CartView extends StatelessWidget {
                                         child: FlatButton(
                                       padding:
                                           EdgeInsets.only(top: 10, bottom: 10),
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (_) =>
+                                                    FinalConfirmationView(
+                                                      cards: viewModel.carts,
+                                                    )));
+                                      },
                                       shape: RoundedRectangleBorder(
                                           borderRadius:
                                               BorderRadius.circular(10)),

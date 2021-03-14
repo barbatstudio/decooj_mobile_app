@@ -9,16 +9,19 @@ class DropDownWidget extends StatelessWidget {
   final List<DropDownModel> items;
   final DropDownModel currentVal;
   final Function(DropDownModel item) onSelectItem;
+  final double width;
 
   const DropDownWidget(
       {@required this.hint,
       @required this.items,
       this.currentVal,
+        this.width,
       this.onSelectItem});
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: width,
       height: 50.0,
       alignment: Alignment.center,
       padding: EdgeInsets.only(right: 10.0,left: 10.0,),
