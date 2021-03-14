@@ -15,6 +15,8 @@ const Color kSecondaryTextColor = Color(0xFFFFFFFF);
 const Color kAccentTextColor = Color(0xFFB7A493);
 const Color kHintTextColor = Color(0xFFA4A4A4);
 const Color kDividerColor = Color(0xFFBDBDBD);
+const Color kTabActive = Color(0xFF7D8186);
+const Color kTabDeActive = Color(0xFFC6CAD1);
 const Color kChipDeactiveColor = Color(0xFFDFDFDF);
 
 const Color kGreenColor = Color(0xFF218683);
@@ -54,7 +56,7 @@ const String kInvalidDataErrorMsg = 'Invalid Data';
 const BoxShadow kBoxShadow = BoxShadow(
   color: Color(0xFFBDBDBD),
   blurRadius: 5.0, // has the effect of softening the shadow
-  spreadRadius: 2.0, // has the effect of extending the shadow
+  spreadRadius: 0.5, // has the effect of extending the shadow
   offset: Offset(
     1.0, // horizontal, move right 10
     3.0, // vertical, move down 10

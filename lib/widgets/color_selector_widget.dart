@@ -39,7 +39,7 @@ class _ColorSelectorWidgetState extends State<ColorSelectorWidget> {
                 margin: EdgeInsets.all(5),
                 decoration: BoxDecoration(
                     border: selectedIndex == i
-                        ? Border.all(color: kPrimaryColor)
+                        ? Border.all(color: kPrimaryColor,width: 3)
                         : null,
                     color: widget.colors[i],
                     borderRadius: BorderRadius.circular(5)),

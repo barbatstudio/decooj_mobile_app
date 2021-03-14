@@ -199,6 +199,16 @@ class Helper {
     )..show(context);
   }
 
+  static void showMessageSnack(BuildContext context,String title,String message)
+  {
+    Flushbar(
+      title:  title,
+      message:  message,
+      duration:  Duration(seconds: 3),
+    )..show(context);
+  }
+
+
   static List<String> getSudgestions(String query) {
     return [
       'پیشنهاد ۱',

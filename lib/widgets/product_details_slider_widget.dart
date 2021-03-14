@@ -55,9 +55,9 @@ class _ProductDetailSliderWidgetState extends State<ProductDetailSliderWidget> {
                       children: [
                         GestureDetector(
                           onTap: () {
-                            if (selectedPicIndex > 0) {
+                            if (selectedPicIndex < widget.imagesUrl.length-1) {
                               setState(() {
-                                selectedPicIndex--;
+                                selectedPicIndex++;
                               });
                             }
                           },
@@ -87,11 +87,12 @@ class _ProductDetailSliderWidgetState extends State<ProductDetailSliderWidget> {
                         ),
                         GestureDetector(
                           onTap: () {
-                            if (selectedPicIndex < widget.imagesUrl.length-1) {
+                            if (selectedPicIndex > 0) {
                               setState(() {
-                                selectedPicIndex++;
+                                selectedPicIndex--;
                               });
                             }
+
                           },
                           child: Container(
                             padding: EdgeInsets.all(5),
@@ -115,18 +116,18 @@ class _ProductDetailSliderWidgetState extends State<ProductDetailSliderWidget> {
               alignment: Alignment.bottomCenter,
               child: Container(
                 margin: EdgeInsets.all(10),
-                height: 70,
+                height: 80,
                 child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     itemCount: widget.imagesUrl.length,
                     reverse: true,
                     itemBuilder: (context, i) {
                       return Container(
-                        width: 70,
-                        height: 70,
+                        width: selectedPicIndex == i ? 70 :60,
+                        height: selectedPicIndex == i ? 70 :60,
                         margin: EdgeInsets.all(5),
                         decoration: BoxDecoration(
-                            border: selectedPicIndex == i ? Border.all(color: kPrimaryColor) : null,
+                            border: selectedPicIndex == i ? Border.all(color: kPrimaryColor,width: 3) : null,
                             color: Colors.white,
                             boxShadow: [kBoxShadow],
                             borderRadius: BorderRadius.circular(10)),

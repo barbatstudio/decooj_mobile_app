@@ -49,7 +49,7 @@ class ProductsSliderWidget extends StatelessWidget {
               height: 8,
             ),
             Text(
-              model.priceBefore + ' تومان ',
+              model.price + ' تومان ',
               maxLines: 2,
 
               style: kTitleTextStyle.copyWith(
